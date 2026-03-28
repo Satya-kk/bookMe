@@ -1,0 +1,46 @@
+<style>
+ .btn-search{
+  background-color: #fe424d;
+  color: white;
+  border-radius: 25px;
+  padding: 0 1rem 0 1rem;
+ }
+ .btn-search:hover{
+  background-color: #fe424d;
+  color: white;
+ }
+ .search-input{
+  width: 25rem;
+  border-radius: 25px;
+ }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand brand" href="/listing">book<span style="color:rgb(99, 27, 133);"><b>Me</b></span></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listing">Explore</a>
+        <a class="nav-link" href="/listing/new">Add new Listings</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <form action="/listing/search" method="GET" class="d-flex" role="search">
+        <input class="form-control me-2 search-input" type="text" placeholder="Search destinations" name="q" aria-label="Search"/>
+        <button class="btn btn-search" type="submit">Search</button>
+      </form>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <% if(!currUser) {%>
+        <a class="nav-link text-center" href="/signup"><b><i class="fa-solid fa-arrow-right-to-bracket"></i><br>Sign up</b></a>
+        <a class="nav-link text-center" href="/login"><b><i class="fa-solid fa-user-plus"></i><br>Log in</b></a>
+        <% } %>
+        <% if(currUser) {%>
+        <a class="nav-link text-center" href="/logout"><b><i class="fa-solid fa-user-minus"></i><br>Log out</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

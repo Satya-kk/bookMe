@@ -1,0 +1,82 @@
+<% layout("/layout/boilerplate")-%>
+
+    <body>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <br>
+                <h2>Add Property:</h2>
+                <form action="/listing" method="post" class=" needs-validation" novalidate
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" placeholder="Enter title" name="listing[title]" required
+                            class="form-control">
+                        <div class="valid-feedback">
+                            Title Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please enter title!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" placeholder="Enter details" class="form-control"
+                            required></textarea>
+                        <div class="valid-feedback">
+                            Description Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please enter description!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" name="listing[image]" id="" alt="err" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Select Categories</label><br>
+
+                        <input type="checkbox" name="listing[category]" value="Trending"> Trending<br>
+                        <input type="checkbox" name="listing[category]" value="Rooms"> Rooms<br>
+                        <input type="checkbox" name="listing[category]" value="Iconic City"> Iconic City<br>
+                        <input type="checkbox" name="listing[category]" value="Mountain"> Mountain<br>
+                        <input type="checkbox" name="listing[category]" value="Castles"> Castles<br>
+                        <input type="checkbox" name="listing[category]" value="Amazing pool"> Amazing pool<br>
+                        <input type="checkbox" name="listing[category]" value="Camping"> Camping<br>
+                        <input type="checkbox" name="listing[category]" value="Farms"> Farms<br>
+                        <input type="checkbox" name="listing[category]" value="Arctic"> Arctic<br>
+                    </div>
+                   
+                    <div class="row ">
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" placeholder="Enter price" name="listing[price]" required
+                                class="form-control">
+                            <div class="invalid-feedback">
+                                Please enter a vaild price!
+                            </div>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" placeholder="Enter location" name="listing[location]"
+                                class="form-control" required>
+                            <div class="invalid-feedback">
+                                Please enter location!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" placeholder="India" name="listing[country]" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please enter Country!
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-dark">Add Property</button>
+                    <a href="/listing" class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+        <br>
+
+    </body>

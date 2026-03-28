@@ -1,0 +1,97 @@
+<% layout("/layout/boilerplate")-%>
+
+    <body>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <br>
+                <h2>Edit Property</h2>
+                <form action="/listing/<%=listing._id%>?_method=PUT" method="post" class="needs-validation" novalidate
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" value="<%=listing.title%>" name="listing[title]" required
+                            class="form-control">
+                        <div class="invalid-feedback">
+                            Please enter title!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="description" id="" name="listing[description]" class="form-control"
+                            required><%=listing.description%></textarea>
+                        <div class="invalid-feedback">
+                            Please enter description!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Original Image</label><br>
+                        <img src="<%=originalUrl%>" alt="Listing img" width="250">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload New Image</label>
+                        <input type="file" name="listing[image]" id="" alt="err" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Select Categories</label><br>
+
+                        <input type="checkbox" name="listing[category]" value="Trending"
+                            <%=listing.category && listing.category.includes("Trending") ? "checked" : "" %>> Trending<br>
+
+                        <input type="checkbox" name="listing[category]" value="Rooms"
+                            <%=listing.category && listing.category.includes("Rooms") ? "checked" : "" %>> Rooms<br>
+
+                        <input type="checkbox" name="listing[category]" value="Iconic City"
+                            <%=listing.category && listing.category.includes("Iconic City") ? "checked" : "" %>> Iconic City<br>
+
+                        <input type="checkbox" name="listing[category]" value="Mountain"
+                            <%=listing.category && listing.category.includes("Mountain") ? "checked" : "" %>> Mountain<br>
+
+                        <input type="checkbox" name="listing[category]" value="Castles"
+                            <%=listing.category && listing.category.includes("Castles") ? "checked" : "" %>> Castles<br>
+
+                        <input type="checkbox" name="listing[category]" value="Amazing pool"
+                            <%=listing.category && listing.category.includes("Amazing pool") ? "checked" : "" %>> Amazing pool<br>
+
+                        <input type="checkbox" name="listing[category]" value="Camping"
+                            <%=listing.category && listing.category.includes("Camping") ? "checked" : "" %>> Camping<br>
+
+                        <input type="checkbox" name="listing[category]" value="Farms"
+                            <%=listing.category && listing.category.includes("Farms") ? "checked" : "" %>> Farms<br>
+
+                        <input type="checkbox" name="listing[category]" value="Arctic"
+                            <%=listing.category && listing.category.includes("Arctic") ? "checked" : "" %>> Arctic<br>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="listing[price]" class="form-label">Price</label>
+                            <input type="number" value="<%=listing.price%>" name="listing[price]" required
+                                class="form-control">
+                            <div class="invalid-feedback">
+                                Please enter valid price!
+                            </div>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" value="<%=listing.location%>" name="listing[location]"
+                                class="form-control" required>
+                            <div class="invalid-feedback">
+                                Please enter location!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" value="<%=listing.country%>" name="listing[country]" class="form-control"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter country!
+                        </div>
+                    </div>
+
+                    <button class="btn btn-dark">Save</button>
+                    <a href="/listing" class="btn btn-secondary">Back</a>
+                </form>
+            </div>
+        </div>
+        <br>
+    </body>
