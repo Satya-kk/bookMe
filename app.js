@@ -84,7 +84,7 @@ app.use((req,res,next)=>{
 })
 
 app.get("/",(req,res)=>{
-    res.redirect("/lisiting");
+    res.redirect("/listing");
 })
 app.get("/demo", async (req, res) => {
     try {
