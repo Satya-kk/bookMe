@@ -19,7 +19,7 @@ router.get("/search", listingController.searchQuery);
 router.route("/:id")
     .put(validateListing,upload.single("listing[image]"), wrapAsync(listingController.saveListing))
     .get(wrapAsync(listingController.showListing))
-    .delete(isLoggedIn, isOwner, wrapAsync(listingController.deleteListing));
+    .delete(isLoggedIn, wrapAsync(listingController.deleteListing));
 
 //edit
 router.get("/:id/edit", isLoggedIn, wrapAsync(listingController.editListing));
