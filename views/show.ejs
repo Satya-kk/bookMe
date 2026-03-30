@@ -28,14 +28,14 @@
                     </div>
                 </div>
                 <a href="/listing"><button class="btn btn-secondary">Back</button></a> <br><br>
-                
+                <% if(currUser && currUser._id.equals(listing.owner._id)) {%>
                     <div class="btn-style">
                         <a href="/listing/<%=listing._id%>/edit"><button class="btn btn-dark">Edit Property</button></a>
                         <form action="/listing/<%= listing._id %>?_method=DELETE" method="POST">
                             <button type="submit" class="btn btn-danger">Delete</button><br>
                         </form>
                     </div>
-                   
+                    <%}%>
             </div>
 
             <!-- review -->
