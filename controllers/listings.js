@@ -17,7 +17,7 @@ module.exports.createListing = async (req, res) => {
     }
     let url = req.file.path;
     let filename = req.file.filename;
-    const { title, description, image, price, location, country, category } = req.body.listing;
+    let { title, description, image, price, location, country, category } = req.body.listing;
     if (typeof category === "string") {
         category = [category];
     }
